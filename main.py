@@ -38,10 +38,12 @@ def help_window():
   tk.Label(help_window, text="Help").pack(side="top")
   tk.Label(help_window, text="Troubleshooting \n").pack(side="top")
   tk.Label(help_window, text="Temperature recordings are not updating - Delete temperature \n log from microcontroller, if the microcontrolloer runs out of storage nothing will update \n").pack(side="top")
+  tk.Label(help_window, text="Temeprature data does not update - Try restarting the microcontroller \n (unplug it then plug it in again) some microcontrollers will not update the text file automatically.").pack(side="top")
+  tk.Label(help_window, text="Multiple lines appear for the weather - This happens \n when the program is restarted and not shut down properly, delete the weather log and the program will automatically remake it").pack(side="top")
   tk.Label(help_window, text="Error message stating 'current' not found - this occurs \n when the API request limit has been reached, in future turn up the recording interval \n").pack(side="top")
   tk.Label(help_window, text="FAQs").pack(side="top")
   tk.Label(help_window, text="Why do sliders and temperature converisons take time to update? - Ensuring \n the graph is updated blocks any other commands from running").pack(side="top")
-  
+
   
 hours = [] #Defines key variables needed for main loop
 temp = []
