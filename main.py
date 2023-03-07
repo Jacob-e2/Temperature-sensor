@@ -36,6 +36,8 @@ def help_window():
   help_window.title("Help")
   help_window.geometry('600x400')
   tk.Label(help_window, text="Help").pack(side="top")
+  tk.Label(help_window, text="Setup \m").pack(side="top")
+  tk.Label(help_window, text="This program has been designed to be as plug and play as possible, however \n occasionally further setup may be required, if your temperature sensor is \n not set as the D: drive you should find the main.py file and change \n the directory to reflect your directory. \n").pack(side="top")
   tk.Label(help_window, text="Troubleshooting \n").pack(side="top")
   tk.Label(help_window, text="Temperature recordings are not updating - Delete temperature \n log from microcontroller, if the microcontrolloer runs out of storage nothing will update \n").pack(side="top")
   tk.Label(help_window, text="Temeprature data does not update - Try restarting the microcontroller \n (unplug it then plug it in again) some microcontrollers will not update the text file automatically.").pack(side="top")
