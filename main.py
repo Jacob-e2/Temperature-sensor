@@ -155,7 +155,7 @@ while True:
   graph(hours, temp, real_temp, repeat)
   repeat = True
 
-  if real_temp[len(real_temp) - 1] > int(upper_warning.get()):
+  if real_temp[len(real_temp) - 1] > int(upper_warning.get()): #Code to initiate temperature alerts
     tk.messagebox.showwarning(title="Temperature Warning", message="The recorded temperature is above the specified limit")
   if real_temp[len(real_temp) - 1] < int(lower_warning.get()):
     tk.messagebox.showwarning(title="Temperature Warning", message="The recorded temperature is below the specified limit")
