@@ -127,11 +127,11 @@ while True:
   temp_data = temp_log.read()
   temp_lines = temp_data.splitlines()
 
-  hours = []
+  hours = [] #Defines arrays which will be used as points on the graph
   temp = []
   real_temp = []
 
-  interval=(interval_slider.get() * 60)
+  interval=(interval_slider.get() * 60) #Retrieves interval data from slider.
 
   for e in temp_lines:
     real_temp.append(int(round(float(e)))) #Adds temperature data to array
