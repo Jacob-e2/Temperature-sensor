@@ -17,3 +17,10 @@ There are a numebr of libraries that you will have to have instaleld should you 
 - Requests - https://pypi.org/project/requests/
 
 Each link should contain information as to how to dowload the package. All credit goes to the authors.
+
+It should also be noted that by default the user is unable to edit files which are stored on the microcontroller due to the code stored within the boot.py file.
+If you do wish to make any changes to the data stored on the microcontroller instructions onhow to do this can be found at the following website
+
+https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem
+
+Once again all credit goes to the author
