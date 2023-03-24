@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 repeat = False
-root = tk.Tk()
+root = tk.Tk() #Configures the main window
 root.geometry('800x800')
 root.title("Temperature Recording")
 
@@ -19,20 +19,20 @@ def isfloat(input): #Used in user validation, checks if integer
     except ValueError:
         return False
 
-def convert(number, root):
+def convert(number, root):  #Subprogram to convert between celsius and fahrenheit
   if isfloat(number):
     print(number)
     global fahrenheit
     fahrenheit.destroy()
     converted = (float(number) * 1.8 + 32)
     print(converted)
-    fahrenheit = tk.Label(root, text=str(converted))
+    fahrenheit = tk.Label(root, text=str(converted)) #Updates the fahrenheit label
     fahrenheit.place(x=50, y=430)
-  else:
+  else: #This section of code runs only if the user has not inputed a number and displays a warning message
     tk.messagebox.showwarning(title="Invalid Input", message="The input needs to be a number!")
 
-def help_window():
-  help_window = tk.Toplevel()
+def help_window(): #Section of code that runs when the help button is pressed
+  help_window = tk.Toplevel() #Configures the new window
   help_window.title("Help")
   help_window.geometry('800x400')
   tk.Label(help_window, text="Help").pack(side="top")
@@ -80,9 +80,9 @@ interval_label.pack()
 #Creates conversion tool objects
 tk.Label(root, text="Celsius:").place(x=0, y=390)
 tk.Label(root, text="Fahrenheit:").place(x=0, y=410)
-celsius_box = tk.Entry(root)
+celsius_box = tk.Entry(root) #Creates text entry object
 celsius_box.place(x=60, y=390)
-celsius_box.insert(0,0)
+celsius_box.insert(0,0) #Fills box with placeholder 0
 fahrenheit = tk.Label(root, text=(32))
 fahrenheit.place(x=80, y=410)
 
@@ -107,10 +107,10 @@ def graph(hours, temp, real_temp, repeat):
   figure1.canvas.draw()
   root.update()
   
-while True:              
+while True: #Loop that will run unil program closed             
   ip = ip_address()
   location = ip_location(ip)
-  temperature = weather(location)
+  temperature = weather(location) #Obtians user's local temperature using IP geolocation
   
   
   log = open("weather.txt", "a") #Writes temeprature data to log
@@ -120,12 +120,12 @@ while True:
 
   log = open("weather.txt", "r") #Reads weather data from log
   data = log.read()
-  lines = data.splitlines()
+  lines = data.splitlines() #Each line gets stored as a new item in an array
   log.close()
 
   temp_log = open("D:\Temperature.txt", "r") #Reads temeprature data from log
   temp_data = temp_log.read()
-  temp_lines = temp_data.splitlines()
+  temp_lines = temp_data.splitlines() #Each line gets stored as a new item in an array
 
   hours = [] #Defines arrays which will be used as points on the graph
   temp = []
@@ -137,8 +137,8 @@ while True:
     real_temp.append(int(round(float(e)))) #Adds temperature data to array
   
   for i in lines:                   #Adds weather and timestamp data to array
-    separate = i.split(",")
-    temp.append(int(separate[0]))
+    separate = i.split(",")         #Separates timestamp and weather data
+    temp.append(int(separate[0])) 
     hours.append(int(separate[1]))
 
   while len(real_temp) < len(temp):  #Runs when weather array is longer than temperature array
