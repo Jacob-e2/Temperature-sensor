@@ -24,3 +24,6 @@ If you do wish to make any changes to the data stored on the microcontroller ins
 https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem
 
 Once again all credit goes to the author
+
+This code will only work with a temperature sensor that is compatible with the I2C protocol, it should be noted that the SDA and SCL have been set to pins 1 and 0 respectively,
+but this can be changed in the code.py file. Most I2C tmeprature sensors also have a power and ground connection but this can be connected to any appropriate pin.
